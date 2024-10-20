@@ -1,0 +1,15 @@
+﻿@model IEnumerable<User>
+
+<h1>Список пользователей</h1>
+
+<form method="get">
+    <input type="text" name="userName">
+    <input type="submit" value="Поиск">
+</form>
+
+<ul>
+    @foreach (var user in Model)
+    {
+        <li>@user.user_name</li>
+    }
+</ul>
