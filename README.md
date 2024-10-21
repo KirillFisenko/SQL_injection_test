@@ -3,7 +3,7 @@
 
 В файле *appsettings.json* необходимо ввести свой пароль от БД MySQL вместо *your_password*.
   
-Скрипт в MySQL для создания тестовой таблицы и вставки данных:
+Скрипт в MySQL для создания тестовой таблицы, вставки данных и процедуры для получения пользователя:
 ```
 CREATE DATABASE sql_injection;
 USE sql_injection;
@@ -14,6 +14,14 @@ CREATE TABLE users (
 );
 
 INSERT INTO users (user_name) VALUES ('user1'), ('user2'), ('user3'), ('user4'), ('user5');
+
+DELIMITER //
+CREATE PROCEDURE get_user_by_user_name(IN p_user_name VARCHAR(255))
+BEGIN
+    SELECT * 
+    FROM users 
+    WHERE user_name = p_user_name;
+END //
 ```
 При вводе в форму имени пользователя - будет выводиться данный пользователь, если он найден.
   
