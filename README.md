@@ -35,7 +35,7 @@ END //
   
 Изменить пользователя в таблице:
 ```
-'; UPDATE users SET username = 'hacked' WHERE id = 2; --
+'; UPDATE users SET user_name = 'hacked' WHERE id = 2; --
 ```
   
 Удалить пользователя в таблице:
